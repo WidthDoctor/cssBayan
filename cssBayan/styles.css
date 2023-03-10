@@ -6,28 +6,79 @@ body{
 }
 
 .meme_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(138, 138, 212);
 }
-.first_meme_container {
+.meme_wrapper input{
+    display: none;
 }
-.meme_title {
+.meme_wrapper label::before{
+    display: none;
+    content: '\270F';
+    float: right;
 }
-.first_title {
+.meme_wrapper:hover label::before{
+    display: block;
 }
-.meme1 {
+.meme_wrapper .acor-body {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    height: 0;
+    color: rgba(0, 0, 0, 0);
+    background-color: #BFE2FF;
+    line-height: 18px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    transition: color 0.5s, padding 0.5s;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
 }
-.second_meme_container {
+.meme_wrapper input:checked + label {
+    background-color: #85195b;
+    color: #d9ff00;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
 }
-.meme2 {
+.meme_wrapper input:checked + label:before {
+    transition: transform .35s;
+    transform: rotate(90deg);
 }
-.third_meme_container {
+.meme_wrapper input:checked + label + .acor-body {
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+    padding: 20px 30px 10px;
 }
-.meme3 {
+.acor-body img{
+    margin: 20px 25%;
+    width: 500px;
+    height: 350px;
+    transition: .35s all;
 }
-.four_meme_container {
+.meme_wrapper label {
+    transition: .35s all;
+    text-align: center;
+    cursor: pointer;
+    background-color: #5f6160;
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    height: 50px;
+    color: #BFE2FF;
+    font-weight: 300;
+    box-sizing: border-box;
+    z-index: 100;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-size: 18px;
+    margin: 0 0 5px;
 }
-.meme4 {
+.meme_wrapper label:hover {
+    color: #ea05ff;
 }
-.five_meme_container {
-}
-.meme5 {
+img:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
 }
