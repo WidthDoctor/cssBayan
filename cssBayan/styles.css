@@ -36,7 +36,7 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% - 40px);
+    width: calc(95% - 40px);
     margin: 0 auto;
     height: 0;
     color: rgba(0, 0, 0, 0);
@@ -79,7 +79,7 @@ body{
     background-color: #5f6160;
     display: block;
     padding: 15px 20px;
-    width: 100%;
+    width: 95%;
     height: 50px;
     color: #BFE2FF;
     font-weight: 300;
