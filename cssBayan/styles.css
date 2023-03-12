@@ -1,5 +1,5 @@
 body{
-    width: 1366px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     background-color: whitesmoke;
@@ -10,9 +10,11 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: rgb(138, 138, 212);
+    font-size: 16px;
 }
 .meme_wrapper input{
     display: none;
+    transition: all 0.5s ease-in-out;
 }
 .meme_wrapper label::before{
     display: none;
@@ -22,7 +24,18 @@ body{
 .meme_wrapper:hover label::before{
     display: block;
 }
+.meme_wrapper label:hover + .acor-body{/*тут короче при наведении на лейбу будет открытие мема*/
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+    padding: 20px 30px 10px;
+    transition: all 0.5s ease-in-out;
+}
+
 .meme_wrapper .acor-body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: calc(100% - 40px);
     margin: 0 auto;
     height: 0;
@@ -34,8 +47,9 @@ body{
     transition: color 0.5s, padding 0.5s;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace, sans-serif;
-    font-size: 16px;
+    font-size: 2rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+    pointer-events: auto;
 }
 .meme_wrapper input:checked + label {
     background-color: #85195b;
@@ -46,7 +60,7 @@ body{
     transition: transform .35s;
     transform: rotate(90deg);
 }
-.meme_wrapper input:checked + label + .acor-body {
+.meme_wrapper input:checked + label + .acor-body,.meme_wrapper .acor-body:hover {
     height: auto;
     margin-top: -5px;
     color: #000;
@@ -72,8 +86,9 @@ body{
     box-sizing: border-box;
     z-index: 100;
     font-family: 'Courier New', Courier, monospace, sans-serif;
-    font-size: 18px;
+    font-size: 1rem;
     margin: 0 0 5px;
+    padding-bottom: 10px;
 }
 .meme_wrapper label:hover {
     color: #ea05ff;
@@ -81,4 +96,132 @@ body{
 img:hover{
     cursor: pointer;
     box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
+    transform: scale(.60) rotate(-730deg);
+    transition: transform 0.5s ease-in-out;
 }
+img:active {
+    transform: scale(.57) rotate(-730deg);
+  }
+#letter_1{
+    animation: gradient2 3.1s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_2{
+    animation: gradient1 3.2s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_3{
+    animation: gradient3 3.3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_4{
+    animation: gradient2 3.1s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_5{
+    animation: gradient1 3.2s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_6{
+    animation: gradient3 3.3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_7{
+    animation: gradient2 3.4s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#letter_8{
+    animation: gradient1 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+
+
+
+    @keyframes gradient1 {
+        0% {
+          background-color: blue;
+        }
+        50% {
+          background-color: green;
+        }
+        100% {
+          background-color: blue;
+        }
+      }
+
+      @keyframes gradient2 {
+        0% {
+          background-color: red;
+        }
+        50% {
+          background-color: yellow;
+        }
+        100% {
+          background-color: red;
+        }
+      }
+
+      @keyframes gradient3 {
+        0% {
+          background-color: greenyellow;
+        }
+        50% {
+          background-color: purple;
+        }
+        100% {
+          background-color: greenyellow;
+        }
+      }
+
+      @keyframes changeFont {
+        0% { font-family: Arial, sans-serif; }
+        33% { font-family: Verdana, sans-serif; }
+        66% { font-family: Georgia, serif; }
+        100% { font-family: Impact, sans-serif; }
+    }
+    h1{
+        animation: changeFont 3.5s infinite;
+    }
+
+    @media only screen and (max-width: 320px) {
+        body{
+            background-image: url(assets/img/secret_meme.jpg);
+        }
+        .meme_wrapper .acor-body {font-size: 0.80rem;}
+        .meme_wrapper label{font-size: 0.80rem;}
+    }
+
+
+
+    @media only screen and (max-width: 1919px) {
+        .acor-body img{
+            width: calc(40%);
+            height: calc(40%);
+        }
+        .meme_wrapper .acor-body {
+            font-size: 0.97rem;
+        }
+        .meme_wrapper label{
+            font-size: 0.97rem;
+        }
+    }
+    @media only screen and (max-width: 819px) {
+        .acor-body img{
+            width: calc(80%);
+            height: calc(80%);
+        }
+        .meme_wrapper .acor-body {
+            font-size: 0.80rem;
+        }
+        .meme_wrapper label{
+            font-size: 0.80rem;
+        }
+    }
